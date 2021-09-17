@@ -7,20 +7,19 @@ public class AddressBook {
     private ArrayList<BuddyInfo> buddies = new ArrayList<>();
 
     // add a new Buddy
-    public void addBuddy(String name, String address, String phoneNumber){
-        BuddyInfo newbuddy = new BuddyInfo(name, address, phoneNumber);
-
-        buddies.add(newbuddy);
+    public void addBuddy(BuddyInfo buddy){
+        buddies.add(buddy);
     }
 
     // remove a Buddy
-    public void removeBuddy(String name, String address, String phoneNumber){
-        BuddyInfo removeBuddy= new BuddyInfo(name, address, phoneNumber);
-
-        buddies.remove(removeBuddy);
+    public void removeBuddy(BuddyInfo buddy){
+        buddies.remove(buddy);
     }
 
     public static void main(String[] args){
-        System.out.println("Address Book");
+        BuddyInfo buddy = new BuddyInfo("Tom", "Carleton", "613");
+        AddressBook addressBook = new AddressBook();
+        addressBook.addBuddy(buddy);
+        addressBook.removeBuddy(buddy);
     }
 }
